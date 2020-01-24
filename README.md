@@ -12,7 +12,7 @@ The `use-remote-resource` lib is a [class hook](https://github.com/class-hooks/c
 
 ```jsx
 class App extends React.Component {
-  reddit = useRemoteResource('https://www.reddit.com/r/reactjs.json');
+  reddit = useRemoteResource(this, 'https://www.reddit.com/r/reactjs.json');
 
   render() {
     return (
@@ -27,6 +27,8 @@ class App extends React.Component {
   }
 }
 ```
+
+A working, prettier example of this reddit app can be found on [codesandbox](https://codesandbox.io/s/use-remote-resource-example-f130i)
 
 ## Usage
 ### Requirements
@@ -57,7 +59,7 @@ The most simple implementation only requires the url of the data to fetch:
 
 ```jsx
 class MyComponent extends React.Component {
-  resource = useRemoteResource('http://...');
+  resource = useRemoteResource(this, 'http://...');
 
   render() {
     <span>
@@ -82,7 +84,7 @@ In case you want to write a "realtime" application such as a chat, and use a pol
 
 ```jsx
 class ChatApp extends React.Component {
-  chatHistory = useRemoteResource('http://...', { autoPollInterval: 1000 });
+  chatHistory = useRemoteResource(this, 'http://...', { autoPollInterval: 1000 });
 
   render() {
     <ul>
@@ -104,7 +106,7 @@ In some cases, you might want to pass headers with the request (such as authoriz
 ```jsx
 const headers = { Authorization: 'Bearer QW1hemluZyBjb2RlciBzbGFzaCBnZW5pdXM=' }
 class MyComponent extends React.Component {
-  resource = useRemoteResource('http://...', { headers });
+  resource = useRemoteResource(this, 'http://...', { headers });
 
   render() {
     <span>
@@ -121,7 +123,7 @@ By default, the remote resource will be polled as soon as the component mounts. 
 
 ```jsx
 class MyComponent extends React.Component {
-  resource = useRemoteResource('http://...', { pollOnMount: false });
+  resource = useRemoteResource(this, 'http://...', { pollOnMount: false });
 
   render() {
     <span>
