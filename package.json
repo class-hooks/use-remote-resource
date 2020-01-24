@@ -18,6 +18,7 @@
   "scripts": {
     "test": "jest",
     "start": "node .",
+    "clean": "rm -rf dist",
     "build:typescript": "tsc",
     "build": "npm run build:typescript",
     "watch:typescript": "tsc -w",
