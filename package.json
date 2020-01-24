@@ -1,6 +1,6 @@
 {
   "name": "@class-hooks/use-remote-resource",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "stay up to date with your server using one line",
   "main": "dist/src/index.js",
   "keywords": [
