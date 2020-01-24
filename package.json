@@ -15,6 +15,7 @@
     "url": "https://github.com/class-hooks/use-remote-resource.git"
   },
   "private": false,
+  "license": "ISC",
   "scripts": {
     "test": "jest",
     "start": "node .",
